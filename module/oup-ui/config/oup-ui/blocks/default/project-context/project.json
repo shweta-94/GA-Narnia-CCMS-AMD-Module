@@ -1,7 +1,7 @@
 {
     "evaluator": "context-project",
     "config": {
-        "project-context": {
+        "subcontext": {
             "items": [
                 {
                     "key": "project/content/heading",
