@@ -8,7 +8,7 @@
                     "items": [{
                         "key": "project/all-journals",
                         "title": "All Journals",
-                        "uri": "#/projects/{projectId}/documents/6290269af6c37bba85da/browse",
+                        "uri": "#/projects/{projectId}/documents/b7fdfd0a4ee02ed0bbf5/browse",
                         "iconClass": "fa fa-book"
                     }]
                 }
