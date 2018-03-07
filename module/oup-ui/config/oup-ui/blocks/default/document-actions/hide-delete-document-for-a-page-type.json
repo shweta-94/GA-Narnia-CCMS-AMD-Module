@@ -4,9 +4,7 @@
   "config": {
     "document-actions": [{
       "key": "delete-document",
-      "rejectPermission": [
-        "read"
-      ]
+      "remove": true
     }]
   }
 }
