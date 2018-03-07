@@ -3,8 +3,8 @@
   "condition": [{
     "evaluator": "context-document"
   }, {
-    "evaluator": "project-has-title",
-    "condition": "Test"
+    "evaluator": "current-user-has-name",
+    "condition": "test"
   }],
   "config": {
     "document-subcontext": {
