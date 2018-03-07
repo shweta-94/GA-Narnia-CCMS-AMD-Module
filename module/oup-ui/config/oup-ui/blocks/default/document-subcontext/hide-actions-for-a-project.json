@@ -4,8 +4,8 @@
   "config": {
     "document-subcontext": [{
       "key": "document/actions",
-      "rejectAuthority": [
-        "example1"
+      "rejectPermission": [
+        "read"
       ]
     }]
   }
