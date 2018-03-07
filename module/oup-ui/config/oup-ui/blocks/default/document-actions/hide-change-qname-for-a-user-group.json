@@ -2,7 +2,7 @@
     "config": {
         "document-actions": [{
             "key": "change-qname",
-            "rejectAuthority": [
+            "allowAuthority": [
                 "example1"
             ]
         }]
