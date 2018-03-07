@@ -1,11 +1,5 @@
 {
-  "evaluator": "and",
-  "condition": [{
-    "evaluator": "context-document"
-  }, {
-    "evaluator": "project-has-title",
-    "condition": "Test"
-  }],
+  "evaluator": "context-document",
   "config": {
     "document-subcontext": {
       "items": [{
@@ -15,8 +9,8 @@
         "order": 1000,
         "items": [{
           "key": "document/actions",
-          "rejectPermission": [
-            "read"
+          "allowAuthority": [
+            "example1"
           ]
         }]
       }]
