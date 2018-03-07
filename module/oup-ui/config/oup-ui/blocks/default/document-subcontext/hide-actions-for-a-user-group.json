@@ -9,7 +9,7 @@
         "order": 1000,
         "items": [{
           "key": "document/actions",
-          "allowAuthority": [
+          "rejectAuthority": [
             "example1"
           ]
         }]
