@@ -15,9 +15,7 @@
         "order": 1000,
         "items": [{
           "key": "document/actions",
-          "rejectPermission": [
-            "read"
-          ]
+          "remove": true
         }]
       }]
     }
