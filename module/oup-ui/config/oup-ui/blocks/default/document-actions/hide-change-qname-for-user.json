@@ -4,7 +4,7 @@
   "config": {
     "document-actions": [{
       "key": "change-qname",
-      "rejectPermission": [
+      "allowPermission": [
         "read"
       ]
     }]
