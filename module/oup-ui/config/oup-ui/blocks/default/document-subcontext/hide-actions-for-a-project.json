@@ -14,10 +14,7 @@
         "header": true,
         "order": 1000,
         "items": [{
-          "key": "document/actions",
-          "allowPermission": [
-            "read"
-          ]
+          "key": "document/actions"
         }]
       }]
     }
