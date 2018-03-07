@@ -1,12 +1,19 @@
 {
-  "evaluator": "project-has-title",
-  "condition": "Test",
+  "evaluator": "context-document",
   "config": {
-    "document-subcontext": [{
-      "key": "document/actions",
-      "rejectPermission": [
-        "read"
-      ]
-    }]
+    "document-subcontext": {
+      "items": [{
+        "key": "document",
+        "title": "Document",
+        "header": true,
+        "order": 1000,
+        "items": [{
+          "key": "document/actions",
+          "rejectAuthority": [
+            "example1"
+          ]
+        }]
+      }]
+    }
   }
 }
