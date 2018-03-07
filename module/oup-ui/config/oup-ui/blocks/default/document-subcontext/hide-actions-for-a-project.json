@@ -1,0 +1,12 @@
+{
+  "evaluator": "project-has-title",
+  "condition": "Test",
+  "config": {
+    "document-subcontext": [{
+      "key": "document/actions",
+      "rejectAuthority": [
+        "example1"
+      ]
+    }]
+  }
+}
