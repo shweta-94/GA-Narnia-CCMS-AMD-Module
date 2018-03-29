@@ -1,6 +1,4 @@
 {
-    "evaluator": "document-has-type",
-    "condition": "my:journalfolder",
     "config": {
         "documents-list-selected-actions": [{
             "action": "edit-journal",
