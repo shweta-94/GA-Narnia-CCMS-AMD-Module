@@ -1,9 +1,6 @@
 {
-  "evaluator": "and",
-  "condition": {
-      "evaluator": "document-has-type",
-      "condition": "my:secondarypages"
-  },
+  "evaluator": "document-has-type",
+  "condition": "my:secondarypages",
   "config": {
     "documents-list-buttons": [
       {
