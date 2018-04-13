@@ -2,10 +2,8 @@
   "evaluator": "and",
   "condition": [
     {
-      "evaluator": "context-project"
-    },
-    {
-      "evaluator": "context-document"
+      "evaluator": "uri-match",
+      "condition": "/projects/{projectId}/documents/{documentId}"
     },
     {
       "evaluator": "context-document-has-type",
@@ -13,9 +11,17 @@
     }
   ],
   "config": {
-    "documents-list-buttons": [{
-      "key": "view_rules",
-      "remove": true
-    }]
+    "regions": {
+      "center": {
+        "type": "all-journals-list",
+        "config": {
+          "documents-list-buttons": [{
+            "key": "view_rules",
+            "remove": true
+          }]
+        }
+      }
+    }
   }
 }
+
