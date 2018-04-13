@@ -11,6 +11,10 @@
         "remove": true
       },
       {
+        "key": "sort-direction-selector",
+        "remove": true
+      },
+      {
         "key": "create-journal",
         "title": "Create Content",
         "iconClass": "fa fa-plus",
@@ -27,10 +31,6 @@
       {
         "key": "view_details",
         "remove": true
-      }],
-    "selectorGroups": {
-      "key": "sort-selector-group",
-      "remove": true
-    }
+      }]
   }
 }
