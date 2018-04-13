@@ -3,10 +3,11 @@ define(function(require, exports, module) {
     debugger;
 
     var Ratchet = require("ratchet/web");
-    var DocumentsList = require("./app/gadgets/project/documents/documents-list.js");
+    var DocList = require("ratchet/dynamic/doclist");
+    //var DocumentsList = require("./app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");
 
-    return Ratchet.GadgetRegistry.register("all-journals-list", DocumentsList.extend({
+    return Ratchet.GadgetRegistry.register("all-journals-list", DocList.extend({
 
         setup: function()
         {
