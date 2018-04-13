@@ -11,17 +11,9 @@
     }
   ],
   "config": {
-    "regions": {
-      "center": {
-        "type": "all-journals-list",
-        "config": {
-          "documents-list-buttons": [{
-            "key": "view_rules",
-            "remove": true
+    "documents-list-buttons": [{
+      "key": "view_rules",
+      "remove": true
           }]
-        }
-      }
-    }
   }
 }
-
