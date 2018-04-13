@@ -18,23 +18,7 @@
         "type": "all-journals-list",
         "config": {
           "chrome": false,
-          "loader": "gitana",
-          "selectorGroups": {
-            "sort-selector-group": {
-              "fields": [
-                {
-                  "key": "title",
-                  "title": "Title",
-                  "field": "title"
-                },
-                {
-                  "key": "description",
-                  "title": "Description",
-                  "field": "description"
-                }
-              ]
-            }
-          }
+          "loader": "gitana"
         }
       }
     }
