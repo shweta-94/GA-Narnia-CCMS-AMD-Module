@@ -2,6 +2,7 @@
   "evaluator": "document-has-type",
   "condition": "my:secondarypages",
   "config": {
+    "checkbox": false,
     "documents-list-buttons": [
       {
         "key": "new",
