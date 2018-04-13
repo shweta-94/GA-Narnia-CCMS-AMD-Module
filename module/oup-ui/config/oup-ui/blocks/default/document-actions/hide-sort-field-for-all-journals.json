@@ -13,7 +13,10 @@
     }
   ],
   "config": {
-    "document-actions": [{
+    "documents-list-buttons": [{
+      "key": "sort-direction-selector",
+      "remove": true
+    }, {
       "key": "sort-selector",
       "remove": true
     }]
