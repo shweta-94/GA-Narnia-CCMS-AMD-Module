@@ -2,16 +2,18 @@
   "evaluator": "document-has-type",
   "condition": "my:alljournals",
   "config": {
-    "document-actions": [{
-      "key": "delete-document",
-      "remove": true
-    }],
     "documents-list-buttons": [{
-      "key": "sort-direction-selector",
-      "remove": true
-    }, {
-      "key": "sort-selector",
-      "remove": true
+      "key": "new",
+      "buttons": [{
+        "key": "create-journal",
+        "title": "Create Journal",
+        "iconClass": "fa fa-plus",
+        "align": "left",
+        "action": "create-journal",
+        "allowPermission": [
+          "create_subobjects"
+        ]
+      }]
     }]
   }
 }

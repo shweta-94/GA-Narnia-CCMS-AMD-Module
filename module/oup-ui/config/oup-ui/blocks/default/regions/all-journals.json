@@ -19,22 +19,13 @@
         "config": {
           "chrome": false,
           "loader": "gitana",
-          "selectorGroups": {
-            "sort-selector-group": {
-              "fields": [
-                {
-                  "key": "title",
-                  "title": "Title",
-                  "field": "title"
-                },
-                {
-                  "key": "description",
-                  "title": "Description",
-                  "field": "description"
-                }
-              ]
-            }
-          }
+          "documents-list-buttons": [{
+            "key": "sort-direction-selector",
+            "remove": true
+          }, {
+            "key": "sort-selector",
+            "remove": true
+          }]
         }
       }
     }
