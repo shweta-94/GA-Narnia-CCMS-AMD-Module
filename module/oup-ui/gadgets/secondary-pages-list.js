@@ -4,16 +4,16 @@ define(function(require, exports, module) {
 
     var Ratchet = require("ratchet/web");
     var DocList = require("ratchet/dynamic/doclist");
-    //var DocumentsList = require("./app/gadgets/project/documents/documents-list.js");
+    var DocumentsList = require("documents-list");
     var OneTeam = require("oneteam");
 
-    return Ratchet.GadgetRegistry.register("secondary-pages-list", DocList.extend({
+    return Ratchet.GadgetRegistry.register("secondary-pages-list", DocumentsList.extend({
 
-        // setup: function()
-        // {
-        //
-        //     this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
-        // },
+        setup: function()
+        {
+
+            this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
+        },
         //
         // configureDefault: function()
         // {
