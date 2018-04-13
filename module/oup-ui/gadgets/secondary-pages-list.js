@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 
     var Ratchet = require("ratchet/web");
     var DocList = require("ratchet/dynamic/doclist");
-    var DocumentsList = require("app/gadgets/project/documents/documents-list");
+    var DocumentsList = require("app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");
 
     return Ratchet.GadgetRegistry.register("secondary-pages-list", DocumentsList.extend({

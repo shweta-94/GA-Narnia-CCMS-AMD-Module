@@ -6,8 +6,8 @@ define(function(require) {
     // action: "edit-journal"
     require("./actions/edit-journal/edit-journal.js");
 
-    require("./gadgets/all-journals-list");
-    require("./gadgets/secondary-pages-list");
+    require("./gadgets/all-journals-list.js");
+    require("./gadgets/secondary-pages-list.js");
     
     // use this to globally control the position of helper text
     Alpaca.defaultHelpersPosition = "above";    
