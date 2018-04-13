@@ -1,19 +1,42 @@
 {
-  "evaluator": "document-has-type",
-  "condition": "my:alljournals",
+  "evaluator": "and",
+  "condition": [
+    {
+      "evaluator": "context-project"
+    },
+    {
+      "evaluator": "context-document"
+    },
+    {
+      "evaluator": "context-document-has-type",
+      "condition": "my:alljournals"
+    }
+  ],
   "config": {
-    "documents-list-buttons": [{
-      "key": "new",
-      "buttons": [{
-        "key": "create-journal",
-        "title": "Create new",
-        "iconClass": "fa fa-plus",
-        "align": "left",
-        "action": "create-journal",
-        "allowPermission": [
-          "create_subobjects"
-        ]
-      }]
-    }]
+    "regions": {
+      "center": {
+        "type": "all-journals-list",
+        "config": {
+          "chrome": false,
+          "loader": "gitana",
+          "selectorGroups": {
+            "sort-selector-group": {
+              "fields": [
+                {
+                  "key": "title",
+                  "title": "Title",
+                  "field": "title"
+                },
+                {
+                  "key": "description",
+                  "title": "Description",
+                  "field": "description"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
   }
 }
