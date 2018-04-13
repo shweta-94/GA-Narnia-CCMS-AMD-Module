@@ -1,33 +1,19 @@
 {
-  "evaluator": "and",
-  "condition": [
-    {
-      "evaluator": "context-project"
-    },
-    {
-      "evaluator": "context-document"
-    },
-    {
-      "evaluator": "context-document-has-type",
-      "condition": "my:alljournals"
-    }
-  ],
+  "evaluator": "document-has-type",
+  "condition": "my:journalfolder",
   "config": {
-    "regions": {
-      "center": {
-        "type": "all-journals-list",
-        "config": {
-          "chrome": false,
-          "loader": "gitana",
-          "documents-list-buttons": [{
-            "key": "sort-direction-selector",
-            "remove": true
-          }, {
-            "key": "sort-selector",
-            "remove": true
-          }]
-        }
-      }
-    }
+    "documents-list-buttons": [{
+      "key": "new",
+      "buttons": [{
+        "key": "create-journal",
+        "title": "Create Journal",
+        "iconClass": "fa fa-plus",
+        "align": "left",
+        "action": "create-journal",
+        "allowPermission": [
+          "create_subobjects"
+        ]
+      }]
+    }]
   }
 }
