@@ -3,13 +3,7 @@
   "condition": [
     {
       "evaluator": "uri-match",
-      "condition": "/projects/{projectId}/documents/{documentId}"
-    },
-    {
-      "evaluator": "context-project"
-    },
-    {
-      "evaluator": "context-document"
+      "condition": "/projects/{projectId}/documents/{documentId}/browse"
     },
     {
       "evaluator": "context-document-has-type",
