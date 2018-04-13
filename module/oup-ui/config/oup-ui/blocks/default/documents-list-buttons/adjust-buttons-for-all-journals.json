@@ -7,15 +7,7 @@
   "config": {
     "documents-list-buttons": [
       {
-        "key": "new",
-        "remove": true
-      },
-      {
-        "key": "sort-direction-selector",
-        "remove": true
-      },
-      {
-        "key": "sort-selector-group",
+        "key": "documents-list-sort-fields",
         "remove": true
       }]
   }
