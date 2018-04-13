@@ -18,16 +18,19 @@
         "type": "all-journals-list",
         "config": {
           "chrome": false,
-          "loader": "gitana",
-          "documents-list-buttons": [{
-            "key": "view_rules",
-            "remove": true
-          }, {
-            "key": "view_details",
-            "remove": true
+          "buttons": [{
+            "key": "edit-layout",
+            "title": "Change Layout",
+            "iconClass": "fa fa-pencil",
+            "align": "left",
+            "action": "edit-layout",
+            "allowPermission": [
+              "create_subobjects"
+            ]
           }]
         }
       }
     }
   }
 }
+

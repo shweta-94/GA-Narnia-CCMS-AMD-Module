@@ -13,19 +13,19 @@ define(function(require, exports, module) {
 
             this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
         },
-
-        configureDefault: function()
-        {
-            this.base();
-
-            this.config({
-                "observables": {
-                    "query": "all-journals-list_query",
-                    "searchTerm": "all-journals-list_searchTerm",
-                    "selectedItems": "all-journals-list_selectedItems"
-                }
-            });
-        },
+        //
+        // configureDefault: function()
+        // {
+        //     this.base();
+        //
+        //     this.config({
+        //         "observables": {
+        //             "query": "all-journals-list_query",
+        //             "searchTerm": "all-journals-list_searchTerm",
+        //             "selectedItems": "all-journals-list_selectedItems"
+        //         }
+        //     });
+        // },
 
         entityTypes: function()
         {
