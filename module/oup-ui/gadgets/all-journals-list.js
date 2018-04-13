@@ -3,7 +3,6 @@ define(function(require, exports, module) {
     debugger;
 
     var Ratchet = require("ratchet/web");
-    var DocList = require("ratchet/dynamic/doclist");
     var DocumentsList = require("/oneteam/modules/app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");
 
@@ -22,8 +21,6 @@ define(function(require, exports, module) {
             this.config({
                 "observables": {
                     "query": "all-journals-list_query",
-                    "sort": "all-journals-list_sort",
-                    "sortDirection": "all-journals-list_sortDirection",
                     "searchTerm": "all-journals-list_searchTerm",
                     "selectedItems": "all-journals-list_selectedItems"
                 }

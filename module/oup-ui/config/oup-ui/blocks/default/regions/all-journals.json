@@ -18,7 +18,14 @@
         "type": "all-journals-list",
         "config": {
           "chrome": false,
-          "loader": "gitana"
+          "loader": "gitana",
+          "documents-list-buttons": [{
+            "key": "view_rules",
+            "remove": true
+          }, {
+            "key": "view_details",
+            "remove": true
+          }]
         }
       }
     }
