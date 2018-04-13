@@ -72,6 +72,8 @@ define(function(require, exports, module) {
                 pagination.sort = {};
             }
 
+            pagination.sort = {};
+
             pagination.sort.family = 1;
 
             Chain(branch).queryNodes(query,pagination).then(function(){
