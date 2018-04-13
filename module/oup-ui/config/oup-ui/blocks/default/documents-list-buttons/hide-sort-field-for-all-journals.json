@@ -2,6 +2,10 @@
   "evaluator": "document-has-type",
   "condition": "my:alljournals",
   "config": {
+    "document-actions": [{
+      "key": "delete-document",
+      "remove": true
+    }],
     "documents-list-buttons": [{
       "key": "sort-direction-selector",
       "remove": true
