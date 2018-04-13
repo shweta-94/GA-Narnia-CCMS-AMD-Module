@@ -3,13 +3,19 @@
   "condition": "my:alljournals",
   "config": {
     "documents-list-buttons": [{
-      "key": "sort-direction-selector",
+      "key": "new",
+      "buttons": [{
+        "key": "new_text_file",
+        "remove": true
+      }, {
+        "key": "new_document",
+        "title": "Create Page Template"
+      }]
+    }, {
+      "key": "view_rules",
       "remove": true
     }, {
-      "key": "sort-selector",
-      "remove": true
-    }, {
-      "key": "multi-documents-action-selector",
+      "key": "view_details",
       "remove": true
     }]
   }
