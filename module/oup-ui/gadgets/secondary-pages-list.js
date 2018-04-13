@@ -40,7 +40,7 @@ define(function(require, exports, module) {
 
         afterSwap: function(el, model, context, callback)
         {
-            model.loader = "gitana";
+            //model.loader = "gitana";
             var self = this;
             this.base(el, model, context, function() {
                 callback();
