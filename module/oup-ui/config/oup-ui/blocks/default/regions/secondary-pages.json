@@ -13,8 +13,9 @@
   "config": {
     "regions": {
       "center": {
-        "type": "all-journals-list",
+        "type": "secondary-pages-list",
         "config": {
+          "checkbox": false,
           "chrome": false,
           "loader": "gitana"
         }
@@ -22,4 +23,3 @@
     }
   }
 }
-
