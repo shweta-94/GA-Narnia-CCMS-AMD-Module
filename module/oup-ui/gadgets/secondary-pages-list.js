@@ -79,38 +79,38 @@ define(function(require, exports, module) {
             });
 
         },
-        //
-        // linkUri: function(row, model, context)
-        // {
-        //     var projectId = context.tokens["projectId"];
-        //
-        //     return "#/projects/" + projectId + "/documents/" + row["_doc"];
-        // },
-        //
-        // iconUri: function(row, model, context)
-        // {
-        //     return OneTeam.iconUriForNode(row);
-        // },
 
-        // columnValue: function(row, item, model, context)
-        // {
-        //     var self = this;
-        //     var project = self.observable("project").get();
-        //
-        //     var value = this.base(row, item);
-        //
-        //     if (item.key === "titleDescription") {
-        //
-        //         var primarySummary = OneTeam.buildPrimaryNodeSummary(row, false, project);
-        //         var expandedSummary = OneTeam.buildNodeSummary(row, false, project);
-        //
-        //         var expanded = self.isTogglerActive(row._doc);
-        //
-        //         value = OneTeam.listTitleDescription(context, row, null, null, false, primarySummary, expandedSummary, expanded);
-        //     }
-        //
-        //     return value;
-        // },
+        linkUri: function(row, model, context)
+        {
+            var projectId = context.tokens["projectId"];
+
+            return "#/projects/" + projectId + "/documents/" + row["_doc"];
+        },
+
+        iconUri: function(row, model, context)
+        {
+            return OneTeam.iconUriForNode(row);
+        },
+
+        columnValue: function(row, item, model, context)
+        {
+            var self = this;
+            var project = self.observable("project").get();
+
+            var value = this.base(row, item);
+
+            if (item.key === "titleDescription") {
+
+                var primarySummary = OneTeam.buildPrimaryNodeSummary(row, false, project);
+                var expandedSummary = OneTeam.buildNodeSummary(row, false, project);
+
+                var expanded = self.isTogglerActive(row._doc);
+
+                value = OneTeam.listTitleDescription(context, row, null, null, false, primarySummary, expandedSummary, expanded);
+            }
+
+            return value;
+        },
 
         handleDrawCallback: function(el, model, table, settings) {
 
