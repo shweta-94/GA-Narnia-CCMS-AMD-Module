@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 
     var Ratchet = require("ratchet/web");
     var DocList = require("ratchet/dynamic/doclist");
-    var DocumentsList = require("documents-list");
+    var DocumentsList = require("/oneteam/modules/app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");
 
     return Ratchet.GadgetRegistry.register("secondary-pages-list", DocumentsList.extend({
@@ -72,7 +72,7 @@ define(function(require, exports, module) {
                 pagination.sort = {};
             }
 
-            pagination.sort.family = -1;
+            pagination.sort.family = 1;
 
             Chain(branch).queryNodes(query,pagination).then(function(){
                 callback(this);
