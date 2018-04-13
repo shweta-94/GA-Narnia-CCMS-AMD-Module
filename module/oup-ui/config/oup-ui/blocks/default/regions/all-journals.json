@@ -1,12 +1,12 @@
 {
   "evaluator": "document-has-type",
-  "condition": "my:journalfolder",
+  "condition": "my:alljournals",
   "config": {
     "documents-list-buttons": [{
       "key": "new",
       "buttons": [{
         "key": "create-journal",
-        "title": "Create Journal",
+        "title": "Create new",
         "iconClass": "fa fa-plus",
         "align": "left",
         "action": "create-journal",
