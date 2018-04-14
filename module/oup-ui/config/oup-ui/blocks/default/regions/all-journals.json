@@ -11,16 +11,15 @@
     }
   ],
   "config": {
-    "loader": "gitana",
-    "checkbox": "false",
     "regions": {
       "center": {
         "type": "all-journals-list",
         "config": {
-          "chrome": false
+          "chrome": false,
+          "checkbox": false,
+          "loader": "gitana"
         }
       }
     }
   }
 }
-
