@@ -19,23 +19,11 @@ define(function(require, exports, module) {
             this.base();
 
             this.config({
-                "columns": [{
-                    "title": "Title",
-                    "property": "title",
-                    "sort": true
-                }, {
-                    "title": "Path URL",
-                    "property": "description",
-                    "sort": true
-                },  {
-                    "title": "Last Modified",
-                    "property": "lastModified",
-                    "sort": true
-                },  {
-                    "title": "Modified By",
-                    "property": "modifiedBy",
-                    "sort": true
-                }],
+                "observables": {
+                    "query": "all-journals-list_query",
+                    "searchTerm": "all-journals-list_searchTerm",
+                    "selectedItems": "all-journals-list_selectedItems"
+                },
                 "loader": "gitana"
             });
         },
@@ -85,7 +73,7 @@ define(function(require, exports, module) {
 
             pagination.sort.family = 1;
 
-            pagination.paths=true
+            pagination.paths=true;
 
             Chain(branch).queryNodes(query,pagination).then(function(){
                 callback(this);
@@ -93,18 +81,17 @@ define(function(require, exports, module) {
 
         },
 
-        // linkUri: function(row, model, context)
-        // {
-        //     var projectId = context.tokens["projectId"];
-        //
-        //     return "#/projects/" + projectId + "/documents/" + row["_doc"];
-        // },
-        //
-        // iconUri: function(row, model, context)
-        // {
-        //     return OneTeam.iconUriForNode(row);
-        // },
-        //
+        linkUri: function(row, model, context)
+        {
+            var projectId = context.tokens["projectId"];
+
+            return "#/projects/" + projectId + "/documents/" + row["_doc"];
+        },
+
+        iconUri: function(row, model, context)
+        {
+            return OneTeam.iconUriForNode(row);
+        },
 
         columnValue: function(row, item, model, context)
         {
@@ -112,7 +99,6 @@ define(function(require, exports, module) {
             var project = self.observable("project").get();
 
             var value = this.base(row, item);
-            //var value = this.getSystemMetadata().getModifiedBy();
 
             if (item.key === "titleDescription") {
 
