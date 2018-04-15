@@ -19,13 +19,24 @@ define(function(require, exports, module) {
             this.base();
 
             this.config({
-                "observables": {
-                    "query": "all-journals-list_query",
-                    "searchTerm": "all-journals-list_searchTerm",
-                    "selectedItems": "all-journals-list_selectedItems"
-                },
+                "columns": [{
+                    "title": "Title",
+                    "property": "title",
+                    "sort": true
+                }, {
+                    "title": "Path URL",
+                    "property": "description",
+                    "sort": true
+                },  {
+                    "title": "Last Modified",
+                    "property": "lastModified",
+                    "sort": true
+                },  {
+                    "title": "Modified By",
+                    "property": "modifiedBy",
+                    "sort": true
+                }],
                 "loader": "gitana"
-
             });
         },
 
@@ -74,6 +85,8 @@ define(function(require, exports, module) {
 
             pagination.sort.family = 1;
 
+            pagination.paths=true
+
             Chain(branch).queryNodes(query,pagination).then(function(){
                 callback(this);
             });
@@ -92,25 +105,27 @@ define(function(require, exports, module) {
         //     return OneTeam.iconUriForNode(row);
         // },
         //
-        // columnValue: function(row, item, model, context)
-        // {
-        //     var self = this;
-        //     var project = self.observable("project").get();
-        //
-        //     var value = this.base(row, item);
-        //
-        //     if (item.key === "titleDescription") {
-        //
-        //         var primarySummary = OneTeam.buildPrimaryNodeSummary(row, false, project);
-        //         var expandedSummary = OneTeam.buildNodeSummary(row, false, project);
-        //
-        //         var expanded = self.isTogglerActive(row._doc);
-        //
-        //         value = OneTeam.listTitleDescription(context, row, null, null, false, primarySummary, expandedSummary, expanded);
-        //     }
-        //
-        //     return value;
-        // },
+
+        columnValue: function(row, item, model, context)
+        {
+            var self = this;
+            var project = self.observable("project").get();
+
+            var value = this.base(row, item);
+            //var value = this.getSystemMetadata().getModifiedBy();
+
+            if (item.key === "titleDescription") {
+
+                var primarySummary = OneTeam.buildPrimaryNodeSummary(row, false, project);
+                var expandedSummary = OneTeam.buildNodeSummary(row, false, project);
+
+                var expanded = self.isTogglerActive(row._doc);
+
+                value = OneTeam.listTitleDescription(context, row, null, null, false, primarySummary, expandedSummary, expanded);
+            }
+
+            return value;
+        },
 
         handleDrawCallback: function(el, model, table, settings) {
 

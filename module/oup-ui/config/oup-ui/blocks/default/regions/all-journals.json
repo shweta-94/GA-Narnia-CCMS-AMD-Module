@@ -16,7 +16,6 @@
         "type": "all-journals-list",
         "config": {
           "chrome": false,
-          "checkbox": false,
           "loader": "gitana"
         }
       }
