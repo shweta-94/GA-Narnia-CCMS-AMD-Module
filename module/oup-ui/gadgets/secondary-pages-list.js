@@ -26,11 +26,10 @@ define(function(require, exports, module) {
                     "sortDirection": "secondary-pages-list_sortDirection",
                     "searchTerm": "secondary-pages-list_searchTerm",
                     "selectedItems": "secondary-pages-list_selectedItems"
-                }
+                },
+                "loader": "gitana",
+                "checkbox": false
             });
-
-            this.loader = "gitana";
-            this.checkbox = false
         },
 
         entityTypes: function()

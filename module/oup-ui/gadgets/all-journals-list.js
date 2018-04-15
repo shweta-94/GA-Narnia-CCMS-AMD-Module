@@ -13,19 +13,21 @@ define(function(require, exports, module) {
 
             this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
         },
-        //
-        // configureDefault: function()
-        // {
-        //     this.base();
-        //
-        //     this.config({
-        //         "observables": {
-        //             "query": "all-journals-list_query",
-        //             "searchTerm": "all-journals-list_searchTerm",
-        //             "selectedItems": "all-journals-list_selectedItems"
-        //         }
-        //     });
-        // },
+
+        configureDefault: function()
+        {
+            this.base();
+
+            this.config({
+                "observables": {
+                    "query": "all-journals-list_query",
+                    "searchTerm": "all-journals-list_searchTerm",
+                    "selectedItems": "all-journals-list_selectedItems"
+                },
+                "loader": "gitana"
+
+            });
+        },
 
         entityTypes: function()
         {
@@ -37,8 +39,6 @@ define(function(require, exports, module) {
 
         afterSwap: function(el, model, context, callback)
         {
-            // model.loader = "gitana";
-            // model.checkbox = false;
             var self = this;
             this.base(el, model, context, function() {
                 callback();
