@@ -14,21 +14,24 @@ define(function(require, exports, module) {
 
             this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
         },
-        //
-        // configureDefault: function()
-        // {
-        //     this.base();
-        //
-        //     this.config({
-        //         "observables": {
-        //             "query": "secondary-pages-list_query",
-        //             "sort": "secondary-pages-list_sort",
-        //             "sortDirection": "secondary-pages-list_sortDirection",
-        //             "searchTerm": "secondary-pages-list_searchTerm",
-        //             "selectedItems": "secondary-pages-list_selectedItems"
-        //         }
-        //     });
-        // },
+
+        configureDefault: function()
+        {
+            this.base();
+
+            this.config({
+                "observables": {
+                    "query": "secondary-pages-list_query",
+                    "sort": "secondary-pages-list_sort",
+                    "sortDirection": "secondary-pages-list_sortDirection",
+                    "searchTerm": "secondary-pages-list_searchTerm",
+                    "selectedItems": "secondary-pages-list_selectedItems"
+                }
+            });
+
+            this.loader = "gitana";
+            this.checkbox = false
+        },
 
         entityTypes: function()
         {
@@ -40,8 +43,6 @@ define(function(require, exports, module) {
 
         afterSwap: function(el, model, context, callback)
         {
-            model.loader = "gitana";
-            model.checkbox = false;
             var self = this;
             this.base(el, model, context, function() {
                 callback();
