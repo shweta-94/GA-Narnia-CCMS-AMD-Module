@@ -121,7 +121,9 @@ define(function(require, exports, module) {
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
 
-            else if (item.key == "path")
+            var value = "";
+
+            if (item.key == "path")
             {
                 value = "";
                 if (row._paths)
