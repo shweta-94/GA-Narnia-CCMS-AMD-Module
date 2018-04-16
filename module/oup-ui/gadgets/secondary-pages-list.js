@@ -26,14 +26,10 @@ define(function(require, exports, module) {
                     "sort": true
                 }, {
                     "key": "modifiedOn",
-                    "title": "Modified On",
-                    "property": "modified_on.ms",
-                    "field": "_system.modified_on.ms"
+                    "title": "Modified On"
                 }, {
                     "key": "modifiedBy",
-                    "title": "Modified By",
-                    "property": "modified_by",
-                    "field": "_system.modified_by"
+                    "title": "Modified By"
                 }],
                 "loader": "gitana",
                 "checkbox": false
@@ -107,12 +103,11 @@ define(function(require, exports, module) {
         {
             var self = this;
 
-            var project = self.observable("project").get();
-
             var value = "";
-            value += row.getSystemMetadata().modified_on.ms;
 
-            value += row.getSystemMetadata().modified_by;
+            value += row.getSystemMetadata().modified_on.ms + '</br';
+
+            value += row.getSystemMetadata().modified_by  + '</br';
 
             return value;
         },
