@@ -97,7 +97,7 @@ define(function(require, exports, module) {
             var self = this;
 
             if(item.key == "titleDecription")
-                return row._doc;
+                return row.title;
 
             if(item.key == "pageName")
                 return row._doc;
@@ -129,4 +129,3 @@ define(function(require, exports, module) {
     }));
 
 });
-
