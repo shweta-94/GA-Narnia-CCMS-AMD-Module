@@ -26,7 +26,7 @@ define(function(require, exports, module) {
                     "sort": true
                 }, {
                     "title": "Path",
-                    "property": "path",
+                    "key": "path",
                     "sort": true
                 }, {
                     "key": "modifiedOn",
@@ -121,8 +121,21 @@ define(function(require, exports, module) {
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
 
+            else if (item.key == "path")
+            {
+                value = "";
+                if (row._paths)
+                {
+                    var array = [];
+                    for (var k in row._paths) {
+                        array.push(row._paths[k]);
+                    }
+                    value = array.join("<br/>");
+                }
+            }
 
-            var value = "";
+
+            //var value = "";
 
             // value = [
             //     '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
