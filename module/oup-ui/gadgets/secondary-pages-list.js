@@ -103,7 +103,7 @@ define(function(require, exports, module) {
 
             if (item.key == "pageName") {
 
-                value += "<a href='#' class='picker-link' data-picker-doc='" + row._doc + "' data-picker-branch='" + row.branchId + "' data-picker-path='" + row.path + "'>";
+                value += "<a href='#/projects/" + project._doc + "/documents/" + row._doc + "'>";
                 value += row.title;
                 value += "</a>";
                 return value;
