@@ -21,6 +21,9 @@ define(function(require, exports, module) {
 
             this.config({
                 "columns": [{
+                    "title": "Page Name",
+                    "property": "pageName"
+                }, {
                     "title": "Path",
                     "property": "path",
                     "sort": true
@@ -103,16 +106,17 @@ define(function(require, exports, module) {
         {
             var self = this;
 
-            if(item.key == "modifiedOn")
-                return row.getSystemMetadata().modified_on.ms
-            var value = "";
+            if(item.key == "titleDecription")
+                return row._doc;
 
-            value = [
-                '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
-                '<strong>','Spotify Link:   ','</strong>',  row.getSystemMetadata().modified_on.ms,'</br>',
-                '<strong>','Popularity:   ','</strong>', row.getSystemMetadata().modified_by, '</br>',
-                '</div>'
-            ].join('\n')
+            if(item.key == "pageName")
+                return row._doc;
+
+            if(item.key == "modifiedBy")
+                return row.getSystemMetadata().modified_by;
+
+            if(item.key == "modifiedOn")
+                return row.getSystemMetadata().modified_on.ms.getTimestamp();
 
             // value = row._doc;
             //
