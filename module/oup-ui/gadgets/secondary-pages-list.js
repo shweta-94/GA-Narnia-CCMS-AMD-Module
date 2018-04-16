@@ -35,7 +35,12 @@ define(function(require, exports, module) {
                     "key": "path"
                 }, {
                     "key": "modifiedOn",
-                    "title": "Last Modified On"
+                    "title": "Last Modified On",
+                    "sortingExpression" : "_system.modified_by",
+                    "property": function(callback) {
+                        var value = this.getSystemMetadata().getModifiedBy();
+                        callback(value);
+                    }
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By"
