@@ -25,12 +25,12 @@ define(function(require, exports, module) {
                     "title": "Page Name",
                     "sort": true
                 }, {
-                    "title": "Path",
+                    "title": "URL Path",
                     "key": "path",
                     "sort": true
                 }, {
                     "key": "modifiedOn",
-                    "title": "Modified On",
+                    "title": "Last Modified On",
                     "sort": true
                 }, {
                     "key": "modifiedBy",
