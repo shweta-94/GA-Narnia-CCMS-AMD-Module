@@ -21,22 +21,18 @@ define(function(require, exports, module) {
 
             this.config({
                 "columns": [{
-                    "title": "Title",
-                    "property": "title",
-                    "sort": true
-                }, {
                     "title": "Path",
                     "property": "path",
                     "sort": true
                 }, {
                     "key": "modifiedOn",
                     "title": "Modified On",
-                    "property": "modifiedOn",
+                    "property": "modified_on.ms",
                     "field": "_system.modified_on.ms"
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By",
-                    "property": "modifiedBy",
+                    "property": "modified_by",
                     "field": "_system.modified_by"
                 }],
                 "loader": "gitana",
@@ -114,9 +110,6 @@ define(function(require, exports, module) {
             var project = self.observable("project").get();
 
             var value = "";
-
-            value +=  row._doc;
-
             value += row.getSystemMetadata().modified_on.ms;
 
             value += row.getSystemMetadata().modified_by;
