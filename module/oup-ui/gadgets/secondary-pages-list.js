@@ -104,14 +104,14 @@ define(function(require, exports, module) {
             var self = this;
 
             var value = "";
-            value += row._paths;
-            value += "<br/>"
+            value += row._paths.toString();
+            //value += "<br/>"
 
             value += row.getSystemMetadata().modified_on.ms;
-            value += "<br/>"
+            //value += "<br/>"
 
             value += row.getSystemMetadata().modified_by;
-            value += "<br/>"
+            //value += "<br/>"
 
             return value;
         },
