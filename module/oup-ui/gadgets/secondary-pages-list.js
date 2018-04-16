@@ -93,25 +93,26 @@ define(function(require, exports, module) {
         //     return OneTeam.iconUriForNode(row);
         // },
         //
-        // columnValue: function(row, item, model, context)
-        // {
-        //     var self = this;
-        //     var project = self.observable("project").get();
-        //
-        //     var value = this.base(row, item);
-        //
-        //     if (item.key === "titleDescription") {
-        //
-        //         var primarySummary = OneTeam.buildPrimaryNodeSummary(row, false, project);
-        //         var expandedSummary = OneTeam.buildNodeSummary(row, false, project);
-        //
-        //         var expanded = self.isTogglerActive(row._doc);
-        //
-        //         value = OneTeam.listTitleDescription(context, row, null, null, false, primarySummary, expandedSummary, expanded);
-        //     }
-        //
-        //     return value;
-        // },
+        columnValue: function(row, item, model, context)
+        {
+            var self = this;
+
+            var value = "";
+            value += "<h3 class='list-row-info title picker-title'>";
+            if (row._project)
+            {
+                value += "<a href='#' class='picker-link' data-picker-project-id='" + row._doc + "' data-picker-project-title='" + row.title + "'>";
+                value +=  row.title;
+                value += "</a>";
+            }
+            else
+            {
+                value +=  row._doc;
+            }
+            value += "</h3>";
+
+            return value;
+        },
 
         handleDrawCallback: function(el, model, table, settings) {
 
