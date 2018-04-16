@@ -36,11 +36,7 @@ define(function(require, exports, module) {
                 }, {
                     "key": "modifiedOn",
                     "title": "Last Modified On",
-                    "sortingExpression" : "_system.modified_by",
-                    "property": function(callback) {
-                        var value = this.getSystemMetadata().getModifiedBy();
-                        callback(value);
-                    },
+                    "field": "_system.modified_on.ms",
                     "sort": true
                 }, {
                     "key": "modifiedBy",
