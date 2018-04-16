@@ -103,10 +103,10 @@ define(function(require, exports, module) {
 
             if (item.key == "pageName") {
 
-            value += "<a href='#' class='picker-link' data-picker-project-id='" + row._doc + "' data-picker-project-title='" + row.title + "'>";
-            value += row.title;
-            value += "</a>";
-            return value;
+                value += "<a href='#' class='picker-link' data-picker-doc='" + row._doc + "' data-picker-branch='" + row.branchId + "' data-picker-path='" + row.path + "'>";
+                value += row.title;
+                value += "</a>";
+                return value;
         }
 
             if(item.key == "modifiedOn")
