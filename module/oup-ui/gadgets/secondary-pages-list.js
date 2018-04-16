@@ -103,6 +103,7 @@ define(function(require, exports, module) {
 
             if (item.key == "pageName") {
 
+                var project = self.observable("project").get();
                 value += "<a href='#/projects/" + project._doc + "/documents/" + row._doc + "'>";
                 value += row.title;
                 value += "</a>";
