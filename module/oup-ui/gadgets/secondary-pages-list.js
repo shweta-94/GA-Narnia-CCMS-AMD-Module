@@ -3,7 +3,6 @@ define(function(require, exports, module) {
     debugger;
 
     var Ratchet = require("ratchet/web");
-    var DocList = require("ratchet/dynamic/doclist");
     var DocumentsList = require("/oneteam/modules/app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");
 
@@ -93,18 +92,6 @@ define(function(require, exports, module) {
 
         },
 
-        // linkUri: function(row, model, context)
-        // {
-        //     var projectId = context.tokens["projectId"];
-        //
-        //     return "#/projects/" + projectId + "/documents/" + row["_doc"];
-        // },
-        //
-        // iconUri: function(row, model, context)
-        // {
-        //     return OneTeam.iconUriForNode(row);
-        // },
-        //
         columnValue: function(row, item, model, context)
         {
             var self = this;
@@ -136,48 +123,7 @@ define(function(require, exports, module) {
                 }
             }
 
-
-            //var value = "";
-
-            // value = [
-            //     '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
-            //     '<strong>','Spotify Link:   ','</strong>',  row.getSystemMetadata().modified_on.ms,'</br>',
-            //     '<strong>','Popularity:   ','</strong>', row.getSystemMetadata().modified_by, '</br>',
-            //     '</div>'
-            // ].join('\n')
-
-            // value = row._doc;
-            //
-            // value += row._paths.toString();
-            // //value += "<br/>"
-            //
-            // value += row.getSystemMetadata().modified_on.ms;
-            // //value += "<br/>"
-            //
-            // value += row.getSystemMetadata().modified_by;
-            // //value += "<br/>"
-
             return value;
-        },
-
-        handleDrawCallback: function(el, model, table, settings) {
-
-            var api = table.api();
-            var last=null;
-            for (var i = 0; i < model.rows.length; i++)
-            {
-                var family = model.rows[i].family;
-                if( last!== family){
-                    var rows = api.rows( {page:'current'} ).nodes();
-                    $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="5">'+family+'</td></tr>'
-                    );
-
-                    last = family;
-                }
-            }
-            return null;
-
         }
 
     }));
