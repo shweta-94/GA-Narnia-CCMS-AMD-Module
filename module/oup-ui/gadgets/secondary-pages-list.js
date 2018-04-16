@@ -98,11 +98,8 @@ define(function(require, exports, module) {
 
             var value = "";
 
-            if(item.key == "titleDecription")
-                value = row.title;
-
             if(item.key == "pageName")
-                return row._doc;
+                return row.title;
 
             if(item.key == "modifiedOn")
                 return row.getSystemMetadata().getModifiedOn().getTimestamp();
