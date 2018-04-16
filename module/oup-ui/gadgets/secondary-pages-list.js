@@ -30,15 +30,8 @@ define(function(require, exports, module) {
                     "sort": true
                 }, {
                     "title": "Last Modified On",
-                    "property": "_system.modified_on.ms",
+                    "property": "modified_on",
                     "sort": true
-                }, {
-                    "title": "Last Modified By",
-                    "sortingExpression" : "_system.modified_by",
-                    "property": function(callback) {
-                        var value = this.getSystemMetadata().getModifiedBy();
-                        callback(value);
-                    }
                 }],
                 "loader": "gitana",
                 "checkbox": false
@@ -111,18 +104,26 @@ define(function(require, exports, module) {
             var self = this;
 
             var value = "";
-            value += "<h3 class='list-row-info title picker-title'>";
-            if (row._project)
+            if (row.modified_on)
             {
-                value += "<a href='#' class='picker-link' data-picker-project-id='" + row._doc + "' data-picker-project-title='" + row.title + "'>";
-                value +=  row.title;
-                value += "</a>";
+                var date = new Date(row.modified_on.ms);
+                value += "<p class='list-row-info modified'>Modified " + bundle.relativeDate(date);
+                if (row.modified_by) {
+                    value += " by " + OneTeam.filterXss(row.modified_by) + "</p>";
+                }
             }
             else
             {
                 value +=  row._doc;
             }
             value += "</h3>";
+
+            var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
+                "modifiedOn": true,
+                "definition": true
+            });
+
+            value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary);
 
             return value;
         },
