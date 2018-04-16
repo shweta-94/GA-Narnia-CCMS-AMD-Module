@@ -113,7 +113,7 @@ define(function(require, exports, module) {
                 return row._doc;
 
             if(item.key == "modifiedOn")
-                return row.getSystemMetadata().modified_on.ms.getTimestamp();
+                return row.getSystemMetadata().getModifiedOn().getTimestamp();
 
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
