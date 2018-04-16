@@ -117,19 +117,9 @@ define(function(require, exports, module) {
 
             value +=  row._doc;
 
-            var definition = model.definitions[row.getTypeQName()];
+            value += row.getSystemMetadata().modified_on.ms;
 
-            var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
-                "modifiedOn": true,
-                "definition": true
-            });
-
-            var expandedSummary = OneTeam.buildNodeSummary(row, definition, project);
-
-            var expanded = self.isTogglerActive(row._doc);
-
-            value += OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary, expandedSummary, expanded);
-            //value += config.modifiedOn;
+            value += row.getSystemMetadata().modified_by;
 
             return value;
         },
