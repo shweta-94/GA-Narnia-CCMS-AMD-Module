@@ -116,14 +116,14 @@ define(function(require, exports, module) {
             {
                 value +=  row._doc;
             }
-            value += "</h3>";
+            //value += "</h3>";
 
-            var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
-                "modifiedOn": true,
-                "definition": true
-            });
+            // var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
+            //     "modifiedOn": true,
+            //     "definition": true
+            // });
 
-            value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary);
+            //value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary);
 
             return value;
         },
