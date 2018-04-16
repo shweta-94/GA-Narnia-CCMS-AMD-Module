@@ -30,11 +30,8 @@ define(function(require, exports, module) {
                     "sort": true
                 }, {
                     "title": "Last Modified On",
-                    "sortingExpression" : "_system.modified_on",
-                    "property": function(callback) {
-                        var value = this.getSystemMetadata().getModifiedOn().getTimestamp();
-                        callback(value);
-                    }
+                    "property": "_system.modified_on.ms",
+                    "sort": true
                 }, {
                     "title": "Last Modified By",
                     "sortingExpression" : "_system.modified_by",
