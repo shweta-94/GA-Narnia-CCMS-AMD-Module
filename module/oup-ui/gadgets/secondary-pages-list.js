@@ -31,10 +31,12 @@ define(function(require, exports, module) {
                 }, {
                     "key": "modifiedOn",
                     "title": "Modified On",
+                    "property": "modifiedOn",
                     "field": "_system.modified_on.ms"
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By",
+                    "property": "modifiedBy",
                     "field": "_system.modified_by"
                 }],
                 "loader": "gitana",
@@ -113,15 +115,16 @@ define(function(require, exports, module) {
 
             value +=  row._doc;
 
+            var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
+                "modifiedOn": true,
+                "definition": true
+            });
 
-            //value += "</h3>";
+            var expandedSummary = OneTeam.buildNodeSummary(row, definition, project);
 
-            // var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
-            //     "modifiedOn": true,
-            //     "definition": true
-            // });
+            var expanded = self.isTogglerActive(row._doc);
 
-            //value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary);
+            value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary, expandedSummary, expanded);
 
             return value;
         },
