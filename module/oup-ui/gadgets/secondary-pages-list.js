@@ -26,16 +26,22 @@ define(function(require, exports, module) {
                     "sort": true
                 }, {
                     "title": "Path",
-                    "property": "url",
+                    "property": "path",
                     "sort": true
                 }, {
-                    "title": "Modified on",
-                    "property": "modifiedOn",
-                    "sort": true
+                    "title": "Last Modified On",
+                    "sortingExpression" : "_system.modified_on",
+                    "property": function(callback) {
+                        var value = this.getSystemMetadata().getModifiedOn().getTimestamp();
+                        callback(value);
+                    }
                 }, {
-                    "title": "Modified By",
-                    "property": "modifiedBy",
-                    "sort": true
+                    "title": "Last Modified By",
+                    "sortingExpression" : "_system.modified_by",
+                    "property": function(callback) {
+                        var value = this.getSystemMetadata().getModifiedBy();
+                        callback(value);
+                    }
                 }],
                 "loader": "gitana",
                 "checkbox": false
