@@ -40,7 +40,8 @@ define(function(require, exports, module) {
                     "property": function(callback) {
                         var value = this.getSystemMetadata().getModifiedBy();
                         callback(value);
-                    }
+                    },
+                    "sort": true
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By"
