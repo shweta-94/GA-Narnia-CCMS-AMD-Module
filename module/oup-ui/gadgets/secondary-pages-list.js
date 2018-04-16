@@ -20,13 +20,23 @@ define(function(require, exports, module) {
             this.base();
 
             this.config({
-                "observables": {
-                    "query": "secondary-pages-list_query",
-                    "sort": "secondary-pages-list_sort",
-                    "sortDirection": "secondary-pages-list_sortDirection",
-                    "searchTerm": "secondary-pages-list_searchTerm",
-                    "selectedItems": "secondary-pages-list_selectedItems"
-                },
+                "columns": [{
+                    "title": "Title",
+                    "property": "title",
+                    "sort": true
+                }, {
+                    "title": "Path",
+                    "property": "url",
+                    "sort": true
+                }, {
+                    "title": "Modified on",
+                    "property": "modifiedOn",
+                    "sort": true
+                }, {
+                    "title": "Modified By",
+                    "property": "modifiedBy",
+                    "sort": true
+                }],
                 "loader": "gitana",
                 "checkbox": false
             });
