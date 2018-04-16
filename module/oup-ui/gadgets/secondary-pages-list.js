@@ -103,6 +103,8 @@ define(function(require, exports, module) {
         {
             var self = this;
 
+            if(item.key == "modifiedOn")
+                return row.getSystemMetadata().modified_on.ms
             var value = "";
 
             value = [
