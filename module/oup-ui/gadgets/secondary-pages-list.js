@@ -115,6 +115,8 @@ define(function(require, exports, module) {
 
             value +=  row._doc;
 
+            var definition = model.definitions[row.getTypeQName()];
+
             var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
                 "modifiedOn": true,
                 "definition": true
@@ -124,7 +126,7 @@ define(function(require, exports, module) {
 
             var expanded = self.isTogglerActive(row._doc);
 
-            value = OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary, expandedSummary, expanded);
+            value += OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary, expandedSummary, expanded);
 
             return value;
         },
