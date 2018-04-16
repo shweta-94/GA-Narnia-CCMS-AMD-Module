@@ -104,14 +104,24 @@ define(function(require, exports, module) {
             var self = this;
 
             var value = "";
-            value += row._paths.toString();
-            //value += "<br/>"
 
-            value += row.getSystemMetadata().modified_on.ms;
-            //value += "<br/>"
+            value = [str.link( "#/projects/" + "72594b38dbefa7e1ff7d" + "/documents/" + row["_doc"]),'</br>',
+                '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
+                '<strong>','Spotify Link:   ','</strong>',  row.getSystemMetadata().modified_on.ms,'</br>',
+                '<strong>','Popularity:   ','</strong>', row.getSystemMetadata().modified_by, '</br>',
+                '</div>'
+            ].join('\n')
 
-            value += row.getSystemMetadata().modified_by;
-            //value += "<br/>"
+            // value = row._doc;
+            //
+            // value += row._paths.toString();
+            // //value += "<br/>"
+            //
+            // value += row.getSystemMetadata().modified_on.ms;
+            // //value += "<br/>"
+            //
+            // value += row.getSystemMetadata().modified_by;
+            // //value += "<br/>"
 
             return value;
         },
