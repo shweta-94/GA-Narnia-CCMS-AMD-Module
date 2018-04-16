@@ -35,9 +35,7 @@ define(function(require, exports, module) {
                     "key": "path"
                 }, {
                     "key": "modifiedOn",
-                    "title": "Last Modified On",
-                    "field": "_system.modified_on.ms",
-                    "sort": true
+                    "title": "Last Modified On"
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By"
