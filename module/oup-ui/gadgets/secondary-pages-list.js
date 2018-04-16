@@ -96,8 +96,10 @@ define(function(require, exports, module) {
         {
             var self = this;
 
+            var value = "";
+
             if(item.key == "titleDecription")
-                return row.title;
+                value = row.title;
 
             if(item.key == "pageName")
                 return row._doc;
@@ -107,8 +109,6 @@ define(function(require, exports, module) {
 
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
-
-            var value = "";
 
             if (item.key == "path")
             {
