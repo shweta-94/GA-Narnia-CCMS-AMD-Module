@@ -21,18 +21,21 @@ define(function(require, exports, module) {
 
             this.config({
                 "columns": [{
+                    "key": "pageName",
                     "title": "Page Name",
-                    "property": "pageName"
+                    "sort": true
                 }, {
                     "title": "Path",
                     "property": "path",
                     "sort": true
                 }, {
                     "key": "modifiedOn",
-                    "title": "Modified On"
+                    "title": "Modified On",
+                    "sort": true
                 }, {
                     "key": "modifiedBy",
-                    "title": "Modified By"
+                    "title": "Modified By",
+                    "sort": true
                 }],
                 "loader": "gitana",
                 "checkbox": false
