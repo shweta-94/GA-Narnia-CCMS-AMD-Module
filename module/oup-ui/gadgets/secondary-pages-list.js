@@ -14,6 +14,14 @@ define(function(require, exports, module) {
             this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
         },
 
+        doclistDefaultConfig: function()
+        {
+            var config = this.base();
+            config.columns = [];
+
+            return config;
+        },
+
         configureDefault: function()
         {
             this.base();
@@ -21,17 +29,13 @@ define(function(require, exports, module) {
             this.config({
                 "columns": [{
                     "key": "pageName",
-                    "title": "Page Name",
-                    "property": "title",
-                    "sort": true
+                    "title": "Page Name"
                 }, {
                     "title": "URL Path",
                     "key": "path"
                 }, {
                     "key": "modifiedOn",
-                    "title": "Last Modified On",
-                    "property": "_system.modified_on.ms",
-                    "sort": true
+                    "title": "Last Modified On"
                 }, {
                     "key": "modifiedBy",
                     "title": "Modified By"
@@ -92,14 +96,18 @@ define(function(require, exports, module) {
 
         },
 
-        columnValue: function(row, item, model, context)
-        {
+        columnValue: function(row, item, model, context) {
             var self = this;
 
             var value = "";
 
-            if(item.key == "pageName")
-                return row.title;
+            if (item.key == "pageName") {
+
+            value += "<a href='#' class='picker-link' data-picker-project-id='" + row._doc + "' data-picker-project-title='" + row.title + "'>";
+            value += row.title;
+            value += "</a>";
+            return value;
+        }
 
             if(item.key == "modifiedOn")
                 return row.getSystemMetadata().getModifiedOn().getTimestamp();
