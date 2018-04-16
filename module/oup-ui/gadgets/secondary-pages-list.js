@@ -112,11 +112,21 @@ define(function(require, exports, module) {
             if(item.key == "pageName")
                 return row._doc;
 
+            if(item.key == "modifiedOn")
+                return row.getSystemMetadata().modified_on.ms.getTimestamp();
+
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
 
-            if(item.key == "modifiedOn")
-                return row.getSystemMetadata().modified_on.ms.getTimestamp();
+
+            var value = "";
+
+            // value = [
+            //     '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
+            //     '<strong>','Spotify Link:   ','</strong>',  row.getSystemMetadata().modified_on.ms,'</br>',
+            //     '<strong>','Popularity:   ','</strong>', row.getSystemMetadata().modified_by, '</br>',
+            //     '</div>'
+            // ].join('\n')
 
             // value = row._doc;
             //
