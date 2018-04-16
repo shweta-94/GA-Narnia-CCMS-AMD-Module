@@ -29,9 +29,13 @@ define(function(require, exports, module) {
                     "property": "path",
                     "sort": true
                 }, {
-                    "title": "Last Modified On",
-                    "property": "modified_on",
-                    "sort": true
+                    "key": "modifiedOn",
+                    "title": "Modified On",
+                    "field": "_system.modified_on.ms"
+                }, {
+                    "key": "modifiedBy",
+                    "title": "Modified By",
+                    "field": "_system.modified_by"
                 }],
                 "loader": "gitana",
                 "checkbox": false
@@ -81,6 +85,8 @@ define(function(require, exports, module) {
 
             pagination.sort.family = 1;
 
+            pagination.paths = true;
+
             Chain(branch).queryNodes(query,pagination).then(function(){
                 callback(this);
             });
@@ -104,18 +110,10 @@ define(function(require, exports, module) {
             var self = this;
 
             var value = "";
-            if (row.modified_on)
-            {
-                var date = new Date(row.modified_on.ms);
-                value += "<p class='list-row-info modified'>Modified " + bundle.relativeDate(date);
-                if (row.modified_by) {
-                    value += " by " + OneTeam.filterXss(row.modified_by) + "</p>";
-                }
-            }
-            else
-            {
-                value +=  row._doc;
-            }
+
+            value +=  row._doc;
+
+
             //value += "</h3>";
 
             // var primarySummary = OneTeam.buildNodeSummaryEx(row, definition, project, {
