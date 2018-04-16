@@ -105,7 +105,7 @@ define(function(require, exports, module) {
 
             var value = "";
 
-            value = [str.link( "#/projects/" + "72594b38dbefa7e1ff7d" + "/documents/" + row["_doc"]),'</br>',
+            value = [
                 '<strong>','Genres:   ','</strong>', row._paths.toString(),'</br>',
                 '<strong>','Spotify Link:   ','</strong>',  row.getSystemMetadata().modified_on.ms,'</br>',
                 '<strong>','Popularity:   ','</strong>', row.getSystemMetadata().modified_by, '</br>',
