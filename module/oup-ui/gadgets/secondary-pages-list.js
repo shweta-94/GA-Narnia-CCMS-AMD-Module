@@ -111,6 +111,8 @@ define(function(require, exports, module) {
         {
             var self = this;
 
+            var project = self.observable("project").get();
+
             var value = "";
 
             value +=  row._doc;
@@ -127,6 +129,7 @@ define(function(require, exports, module) {
             var expanded = self.isTogglerActive(row._doc);
 
             value += OneTeam.listTitleDescription(context, row, self.linkUri(row, model, context), null, false, primarySummary, expandedSummary, expanded);
+            value += config.modifiedOn;
 
             return value;
         },
