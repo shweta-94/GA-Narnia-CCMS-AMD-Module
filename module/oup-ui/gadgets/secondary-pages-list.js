@@ -22,19 +22,19 @@ define(function(require, exports, module) {
                 "columns": [{
                     "key": "pageName",
                     "title": "Page Name",
+                    "property": "title",
                     "sort": true
                 }, {
                     "title": "URL Path",
-                    "key": "path",
-                    "sort": true
+                    "key": "path"
                 }, {
                     "key": "modifiedOn",
                     "title": "Last Modified On",
+                    "property": "_system.modified_on.ms",
                     "sort": true
                 }, {
                     "key": "modifiedBy",
-                    "title": "Modified By",
-                    "sort": true
+                    "title": "Modified By"
                 }],
                 "loader": "gitana",
                 "checkbox": false
