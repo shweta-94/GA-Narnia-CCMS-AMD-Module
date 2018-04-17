@@ -1,7 +1,5 @@
 define(function(require, exports, module) {
 
-    debugger;
-
     var Ratchet = require("ratchet/web");
     var DocumentsList = require("/oneteam/modules/app/gadgets/project/documents/documents-list.js");
     var OneTeam = require("oneteam");

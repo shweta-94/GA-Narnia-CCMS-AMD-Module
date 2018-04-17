@@ -90,3 +90,45 @@ Hide the "Actions" menu in the Document left-hand navigation for a specific user
 
 
 
+new
+document-actions
+hide-change-qname-for-a-team.json
+
+new
+document-list-item-actions
+add-edit-image-item-action.json
+
+new
+document-list-item-actions
+remove-download-zip-for-a-project.json
+(THIS WORKS NOW)
+
+new
+document-actions
+hide-change-qname-for-a-role.json
+
+new
+document-list-selected-actions
+remove-add-to-favorites-for-type.json
+
+new
+documents-subcontext
+hide-actions-for-a-role.json
+hide-actions-for-a-role2.json (a better way)
+hide-actions-for-a-permission.json.sample
+
+new
+project-context
+rename-project-heading-when-viewing-test-view.json
+
+new
+content-instances-list-item-actions
+add-edit-image-item-action.json
+
+
+
+
+
+
+
+
