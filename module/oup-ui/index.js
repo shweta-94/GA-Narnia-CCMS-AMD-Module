@@ -5,7 +5,11 @@ define(function(require) {
     
     // action: "edit-journal"
     require("./actions/edit-journal/edit-journal.js");
+    
+    // action: "open-oup"
+    require("./actions/open-oup/open-oup.js");
 
+    // new pages
     require("./gadgets/all-journals-list.js");
     require("./gadgets/secondary-pages-list.js");
     

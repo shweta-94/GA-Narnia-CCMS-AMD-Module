@@ -125,7 +125,16 @@ new
 content-instances-list-item-actions
 add-edit-image-item-action.json
 
+updated
+documents-list-buttons
+adjust-documents-list-buttons-for-path.json (new_text_document)
+adjust-documents-list-buttons-for-type.json (new_text_document)
 
+---
+
+all-journals and secondary-pages
+blocks/default/regions/all-journals.json
+blocks/default/regions/secondary-pages.json
 
 
 
