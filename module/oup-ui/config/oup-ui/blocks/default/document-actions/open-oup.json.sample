@@ -2,7 +2,7 @@
     "config": {
         "document-actions": [{
             "key": "open-oup",
-            "title": "View OUP Home Page",
+            "title": "Open OUP Home Page",
             "iconClass": "fa fa-book",
             "action": "open-oup"
         }]

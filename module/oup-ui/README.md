@@ -90,6 +90,8 @@ Hide the "Actions" menu in the Document left-hand navigation for a specific user
 
 
 
+New items - to be documented:
+
 new
 document-actions
 hide-change-qname-for-a-team.json
@@ -135,6 +137,14 @@ adjust-documents-list-buttons-for-type.json (new_text_document)
 all-journals and secondary-pages
 blocks/default/regions/all-journals.json
 blocks/default/regions/secondary-pages.json
+
+two examples of custom document actions
+document-actions
+open-oup.json.sample (runs a custom action)
+open-oup.json.sample2 (opens a url)
+
+
+
 
 
 
