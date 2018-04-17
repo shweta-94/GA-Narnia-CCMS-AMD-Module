@@ -12,6 +12,14 @@ define(function(require, exports, module) {
             this.get("/projects/{projectId}/documents/{documentId}/browse", this.index);
         },
 
+        doclistDefaultConfig: function()
+        {
+            var config = this.base();
+            config.columns = [];
+
+            return config;
+        },
+
         configureDefault: function()
         {
             this.base();
@@ -19,20 +27,16 @@ define(function(require, exports, module) {
             this.config({
                 "columns": [{
                     "key": "pageName",
-                    "title": "Page Name",
-                    "sort": true
+                    "title": "Page Name"
                 }, {
                     "title": "URL Path",
-                    "key": "path",
-                    "sort": true
+                    "key": "path"
                 }, {
                     "key": "modifiedOn",
-                    "title": "Last Modified On",
-                    "sort": true
+                    "title": "Last Modified On"
                 }, {
                     "key": "modifiedBy",
-                    "title": "Modified By",
-                    "sort": true
+                    "title": "Modified By"
                 }],
                 "loader": "gitana",
                 "checkbox": false
@@ -90,23 +94,25 @@ define(function(require, exports, module) {
 
         },
 
-        columnValue: function(row, item, model, context)
-        {
+        columnValue: function(row, item, model, context) {
             var self = this;
 
-            if(item.key == "titleDecription")
-                return row._doc;
+            var value = "";
 
-            if(item.key == "pageName")
-                return row._doc;
+            if (item.key == "pageName") {
+
+                var project = self.observable("project").get();
+                value += "<a href='#/projects/" + project._doc + "/documents/" + row._doc + "'>";
+                value += row.title;
+                value += "</a>";
+                return value;
+        }
 
             if(item.key == "modifiedOn")
                 return row.getSystemMetadata().getModifiedOn().getTimestamp();
 
             if(item.key == "modifiedBy")
                 return row.getSystemMetadata().modified_by;
-
-            var value = "";
 
             if (item.key == "path")
             {
@@ -127,4 +133,3 @@ define(function(require, exports, module) {
     }));
 
 });
-
